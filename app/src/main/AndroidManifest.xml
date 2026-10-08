@@ -71,6 +71,21 @@
             </intent-filter>
         </receiver>
 
+        <!-- Home Screen App Widget -->
+        <receiver
+            android:name=".widget.RuleAppWidgetProvider"
+            android:label="@string/widget_name"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.agradra.betterboyfriend.ACTION_SELECT_TYPE" />
+                <action android:name="com.agradra.betterboyfriend.ACTION_REFRESH_WIDGET" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/rule_widget_info" />
+        </receiver>
+
     </application>
 
 </manifest>

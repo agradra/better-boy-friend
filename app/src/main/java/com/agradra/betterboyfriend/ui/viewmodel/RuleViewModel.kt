@@ -8,6 +8,7 @@ import com.agradra.betterboyfriend.data.model.RuleItem
 import com.agradra.betterboyfriend.data.model.RuleType
 import com.agradra.betterboyfriend.data.repository.RuleRepository
 import com.agradra.betterboyfriend.util.CsvHelper
+import com.agradra.betterboyfriend.widget.RuleAppWidgetProvider
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -160,6 +161,7 @@ class RuleViewModel(application: Application) : AndroidViewModel(application) {
                 reason = reason.trim()
             )
             repository.insert(item)
+            RuleAppWidgetProvider.updateAllWidgets(getApplication())
             _toastEvent.emit("항목이 추가되었습니다.")
         }
     }
@@ -167,6 +169,7 @@ class RuleViewModel(application: Application) : AndroidViewModel(application) {
     fun updateRule(rule: RuleItem) {
         viewModelScope.launch {
             repository.update(rule)
+            RuleAppWidgetProvider.updateAllWidgets(getApplication())
             _toastEvent.emit("수정되었습니다.")
         }
     }
@@ -174,6 +177,7 @@ class RuleViewModel(application: Application) : AndroidViewModel(application) {
     fun deleteRule(rule: RuleItem) {
         viewModelScope.launch {
             repository.delete(rule)
+            RuleAppWidgetProvider.updateAllWidgets(getApplication())
             _toastEvent.emit("삭제되었습니다.")
         }
     }
@@ -200,6 +204,7 @@ class RuleViewModel(application: Application) : AndroidViewModel(application) {
                     return@launch
                 }
                 val count = repository.importFromCsv(parsedItems)
+                RuleAppWidgetProvider.updateAllWidgets(getApplication())
                 _toastEvent.emit("CSV에서 ${count}개 항목을 성공적으로 반영했습니다.")
             } catch (e: Exception) {
                 e.printStackTrace()

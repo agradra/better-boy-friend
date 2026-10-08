@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- 상단 헤더: 제목 + 상태 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="6dp">
+
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BETTERBOYFRIEND"
+            android:textColor="#8E8E93"
+            android:textSize="9.5sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08" />
+
+        <TextView
+            android:id="@+id/widget_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DONT • 0개"
+            android:textColor="#FF453A"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 구분선 (RemoteViews 호환을 위해 ImageView 사용) -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2C2C2E"
+        android:contentDescription="@null" />
+
+    <!-- 중간 리스트 영역 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingVertical="4dp">
+
+        <ListView
+            android:id="@+id/widget_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="2dp"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/widget_empty_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="등록된 지침이 없습니다"
+            android:textColor="#636366"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- 구분선 (RemoteViews 호환을 위해 ImageView 사용) -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2C2C2E"
+        android:contentDescription="@null" />
+
+    <!-- 하단 버튼 영역: 왼쪽 앱 열기, 오른쪽 DO / DONT / ASK -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="7dp">
+
+        <!-- 왼쪽: 앱 열기 버튼 -->
+        <TextView
+            android:id="@+id/btn_open_app"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="앱 열기"
+            android:textColor="#FFFFFF"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            android:background="@drawable/widget_btn_open_app" />
+
+        <!-- 우측으로 밀기 위한 여백 (RemoteViews 호환을 위해 FrameLayout 사용) -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- 오른쪽: 3개 버튼 (DO, DONT, ASK) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/btn_type_do"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:minWidth="40dp"
+                android:gravity="center"
+                android:paddingHorizontal="7dp"
+                android:text="DO"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/widget_btn_unselected" />
+
+            <TextView
+                android:id="@+id/btn_type_dont"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:minWidth="46dp"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:paddingHorizontal="7dp"
+                android:text="DONT"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/widget_btn_selected_dont" />
+
+            <TextView
+                android:id="@+id/btn_type_ask"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:minWidth="40dp"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:paddingHorizontal="7dp"
+                android:text="ASK"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/widget_btn_unselected" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

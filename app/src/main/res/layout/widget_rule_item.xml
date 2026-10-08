@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="4dp"
+    android:paddingHorizontal="4dp">
+
+    <!-- 중요도 색 점 -->
+    <ImageView
+        android:id="@+id/item_dot"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/widget_dot_red"
+        android:contentDescription="Priority Dot" />
+
+    <!-- 카테고리 태그 -->
+    <TextView
+        android:id="@+id/item_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/widget_category_bg"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="1.5dp"
+        android:text="일반"
+        android:textColor="#8E8E93"
+        android:textSize="9.5sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="6dp" />
+
+    <!-- 내용 -->
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="행동 지침 내용"
+        android:textColor="#F5F5F7"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+</LinearLayout>
