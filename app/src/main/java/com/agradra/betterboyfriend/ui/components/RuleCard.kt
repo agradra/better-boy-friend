@@ -65,7 +65,7 @@ fun RuleCard(
                 .padding(horizontal = 12.dp, vertical = 9.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // 1. 아이콘 (유형별 이모지 및 배경)
+            // 아이콘
             Surface(
                 shape = RoundedCornerShape(10.dp),
                 color = typeContainerColor,
@@ -81,7 +81,7 @@ fun RuleCard(
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            // 2. 태그 및 내용
+            // 태그, 내용
             Column(
                 modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.Center
@@ -104,7 +104,7 @@ fun RuleCard(
 
             Spacer(modifier = Modifier.width(8.dp))
 
-            // 3. 레벨 (Lv.1, Lv.2, Lv.3)
+            // 레벨
             PriorityIndicator(priority = rule.priority)
         }
     }

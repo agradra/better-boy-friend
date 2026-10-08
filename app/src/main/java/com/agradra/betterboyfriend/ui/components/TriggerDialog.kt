@@ -100,7 +100,7 @@ fun TriggerDialog(
                     .fillMaxWidth()
                     .verticalScroll(rememberScrollState())
             ) {
-                // 1. 조건 선택 (Multi-select)
+                // 조건 선택
                 Text(
                     text = "발동 조건 (여러 개 선택 가능)",
                     style = MaterialTheme.typography.labelLarge,
@@ -175,7 +175,7 @@ fun TriggerDialog(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 2. 대상자 입력 (전화 또는 메시지 선택 시)
+                // 대상자 입력
                 if (needsPerson) {
                     OutlinedTextField(
                         value = targetPerson,
@@ -189,7 +189,7 @@ fun TriggerDialog(
                     Spacer(modifier = Modifier.height(12.dp))
                 }
 
-                // 3. 대상 앱 입력 (앱 실행 선택 시)
+                // 대상 앱 입력
                 if (needsApp) {
                     OutlinedTextField(
                         value = targetApp,
@@ -258,7 +258,7 @@ fun TriggerDialog(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 5. 트리거 이름 (선택사항)
+                // 트리거 이름 (선택)
                 OutlinedTextField(
                     value = title,
                     onValueChange = { title = it },

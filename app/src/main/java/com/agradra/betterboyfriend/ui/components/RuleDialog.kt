@@ -130,7 +130,7 @@ fun RuleDialog(
                     .fillMaxWidth()
                     .verticalScroll(rememberScrollState())
             ) {
-                // 1. 유형 선택 (Type)
+                // 유형 선택
                 Text(
                     text = "행동 유형",
                     style = MaterialTheme.typography.labelLarge,
@@ -150,7 +150,9 @@ fun RuleDialog(
 
                         Surface(
                             shape = RoundedCornerShape(12.dp),
-                            color = if (isSelected) containerColor else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                            color = if (isSelected) containerColor else MaterialTheme.colorScheme.surfaceVariant.copy(
+                                alpha = 0.5f
+                            ),
                             border = if (isSelected) BorderStroke(1.5.dp, color) else null,
                             modifier = Modifier
                                 .weight(1f)
@@ -175,7 +177,7 @@ fun RuleDialog(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 2. 내용 (Title)
+                // 내용
                 OutlinedTextField(
                     value = title,
                     onValueChange = {
@@ -198,7 +200,7 @@ fun RuleDialog(
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                // 3. 중요도 (Priority: 1, 2, 3)
+                // 중요도 (1, 2, 3)
                 Text(
                     text = "중요도 (1~3)",
                     style = MaterialTheme.typography.labelLarge,
@@ -218,7 +220,9 @@ fun RuleDialog(
                         val isSelected = priority == level
                         Surface(
                             shape = RoundedCornerShape(10.dp),
-                            color = if (isSelected) color.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f),
+                            color = if (isSelected) color.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surfaceVariant.copy(
+                                alpha = 0.4f
+                            ),
                             border = if (isSelected) BorderStroke(1.5.dp, color) else null,
                             modifier = Modifier
                                 .weight(1f)
@@ -233,7 +237,9 @@ fun RuleDialog(
                                     Icon(
                                         imageVector = Icons.Default.Star,
                                         contentDescription = null,
-                                        tint = if (isSelected) color else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                                        tint = if (isSelected) color else MaterialTheme.colorScheme.onSurfaceVariant.copy(
+                                            alpha = 0.6f
+                                        ),
                                         modifier = Modifier.size(13.dp)
                                     )
                                 }
@@ -251,7 +257,7 @@ fun RuleDialog(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 4. 카테고리 (Category)
+                // 카테고리
                 OutlinedTextField(
                     value = category,
                     onValueChange = { category = it },
@@ -263,7 +269,6 @@ fun RuleDialog(
                 )
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // 카테고리 추천 칩
                 FlowRow(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -281,7 +286,7 @@ fun RuleDialog(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 5. 날짜 (Date) - 기본 당일, 편집 가능
+                // 날짜
                 OutlinedTextField(
                     value = date,
                     onValueChange = { date = it },
@@ -303,7 +308,7 @@ fun RuleDialog(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 6. 이유 (Reason)
+                // 이유
                 OutlinedTextField(
                     value = reason,
                     onValueChange = { reason = it },
