@@ -26,6 +26,8 @@ android {
             storePassword = "android"
             keyAlias = "betterboyfriend"
             keyPassword = "android"
+            enableV1Signing = true
+            enableV2Signing = true
         }
     }
 
