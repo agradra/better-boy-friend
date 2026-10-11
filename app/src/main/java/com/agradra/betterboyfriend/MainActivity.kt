@@ -83,7 +83,7 @@ class MainActivity : ComponentActivity() {
                     MainScreen(
                         viewModel = ruleViewModel,
                         onExportCsvClick = {
-                            val fileName = "better_boy_friend_rules_${LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE)}.csv"
+                            val fileName = "better-boy-friend_rules_${LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE)}.csv"
                             exportCsvLauncher.launch(fileName)
                         },
                         onImportCsvClick = {

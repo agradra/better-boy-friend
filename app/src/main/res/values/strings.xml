@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">better_boy_friend</string>
+    <string name="app_name">better-boy-friend</string>
     <string name="widget_name">행동 지침 위젯</string>
     <string name="widget_description">상황별 주의사항(DONT)과 지침(DO/ASK)을 홈 화면에서 확인합니다.</string>
 </resources>
